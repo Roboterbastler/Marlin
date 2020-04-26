@@ -884,14 +884,14 @@
 
 // The size of the print bed
 #define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define Y_BED_SIZE 190
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -33
-#define Y_MIN_POS -10
+#define X_MIN_POS -15
+#define Y_MIN_POS -29
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS 220
+#define Y_MAX_POS 190
 #define Z_MAX_POS 240
 
 /**
@@ -1028,14 +1028,14 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  //#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  //#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
   #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define RIGHT_PROBE_BED_POSITION 170
+  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE + (X_PROBE_OFFSET_FROM_EXTRUDER))
   #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
+  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE + (Y_PROBE_OFFSET_FROM_EXTRUDER))
+//  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
+//  #define RIGHT_PROBE_BED_POSITION 170
+//  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
+//  #define BACK_PROBE_BED_POSITION 190
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
